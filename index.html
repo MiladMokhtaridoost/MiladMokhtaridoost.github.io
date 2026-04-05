@@ -11,25 +11,25 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0e17;
-    --bg2: #0f1420;
-    --bg3: #141926;
-    --bg4: #1a2030;
-    --card: #111827;
-    --border: rgba(99,182,255,0.1);
-    --border2: rgba(99,182,255,0.18);
-    --accent: #4fc3f7;
-    --accent2: #38bdf8;
-    --accent3: #7dd3fc;
-    --teal: #2dd4bf;
-    --teal2: #14b8a6;
-    --muted: #64748b;
-    --muted2: #94a3b8;
-    --text: #e2e8f0;
-    --text2: #cbd5e1;
-    --text3: #94a3b8;
-    --green: #34d399;
-    --amber: #fbbf24;
+    --bg: #f8fafc;
+    --bg2: #f1f5f9;
+    --bg3: #e8edf5;
+    --bg4: #dde3ef;
+    --card: #ffffff;
+    --border: rgba(15,23,42,0.08);
+    --border2: rgba(15,23,42,0.16);
+    --accent: #0284c7;
+    --accent2: #0369a1;
+    --accent3: #0ea5e9;
+    --teal: #0d9488;
+    --teal2: #0f766e;
+    --muted: #94a3b8;
+    --muted2: #64748b;
+    --text: #0f172a;
+    --text2: #1e293b;
+    --text3: #475569;
+    --green: #059669;
+    --amber: #b45309;
     --font-sans: 'DM Sans', sans-serif;
     --font-mono: 'DM Mono', monospace;
     --font-serif: 'Fraunces', serif;
@@ -53,7 +53,7 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    background: rgba(10,14,23,0.85);
+    background: rgba(248,250,252,0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     padding: 0 2rem;
@@ -110,8 +110,8 @@
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(79,195,247,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(79,195,247,0.03) 1px, transparent 1px);
+      linear-gradient(rgba(2,132,199,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(2,132,199,0.06) 1px, transparent 1px);
     background-size: 60px 60px;
     pointer-events: none;
   }
@@ -121,7 +121,7 @@
     width: 600px;
     height: 600px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(79,195,247,0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(2,132,199,0.08) 0%, transparent 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -141,7 +141,7 @@
     text-transform: uppercase;
     margin-bottom: 1.5rem;
     padding: 6px 14px;
-    border: 1px solid rgba(79,195,247,0.2);
+    border: 1px solid rgba(2,132,199,0.25);
     border-radius: 2px;
   }
 
@@ -163,7 +163,7 @@
     font-weight: 300;
     font-size: clamp(2.8rem, 6vw, 4.5rem);
     line-height: 1.1;
-    color: #f1f5f9;
+    color: var(--text);
     margin-bottom: 0.3em;
   }
 
@@ -201,7 +201,7 @@
     gap: 8px;
     padding: 10px 22px;
     background: var(--accent);
-    color: #0a0e17;
+    color: #ffffff;
     font-family: var(--font-sans);
     font-size: 13px;
     font-weight: 500;
@@ -257,7 +257,7 @@
     font-family: var(--font-serif);
     font-weight: 300;
     font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-    color: #f1f5f9;
+    color: var(--text);
     margin-bottom: 1rem;
     line-height: 1.2;
   }
@@ -315,16 +315,16 @@
   }
 
   .badge-selected {
-    background: rgba(79,195,247,0.1);
+    background: rgba(2,132,199,0.08);
     color: var(--accent);
-    border: 1px solid rgba(79,195,247,0.15);
+    border: 1px solid rgba(2,132,199,0.2);
   }
 
   .project-card h3 {
     font-family: var(--font-serif);
     font-weight: 300;
     font-size: 1.3rem;
-    color: #f1f5f9;
+    color: var(--text);
     margin-bottom: 0.8rem;
     line-height: 1.3;
   }
@@ -348,9 +348,9 @@
     font-family: var(--font-mono);
     font-size: 10px;
     padding: 3px 8px;
-    background: rgba(99,182,255,0.06);
-    color: var(--accent3);
-    border: 1px solid rgba(99,182,255,0.12);
+    background: rgba(2,132,199,0.07);
+    color: var(--accent2);
+    border: 1px solid rgba(2,132,199,0.18);
     border-radius: 2px;
     letter-spacing: 0.05em;
   }
@@ -652,7 +652,7 @@
     font-family: var(--font-mono);
     font-size: 0.85em;
     color: var(--accent);
-    background: rgba(79,195,247,0.08);
+    background: rgba(2,132,199,0.08);
     padding: 1px 5px;
     border-radius: 2px;
   }
@@ -849,7 +849,8 @@
 
       <div style="margin-top: 2.5rem;">
         <div class="section-label" style="margin-bottom: 1rem;">Figure</div>
-        <img src="signature_fig.png" alt="SIGNATURE figure" style="width: 100%; border-radius: 6px; border: 1px solid var(--border);">
+        <img src="signature_fig.png" alt="SIGNATURE figure" style="display: block; width: 75%; margin: 0 auto; border-radius: 6px; border: 1px solid var(--border);">
+
       </div>
     </div>
   </div>
