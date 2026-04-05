@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milad Mokhtaridoost | Machine Learning Scientist in Computational Biology</title>
+<meta name="description" content="Machine Learning Scientist in Computational Biology working on graph-based modeling, multi-omics integration, and scalable AI systems for genome organization and disease.">
+<meta name="keywords" content="Machine Learning Scientist, Computational Biology, Graph ML, Multi-Omics, Genomics, 3D Genome, Hi-C, GNN, Bioinformatics, AWS, Biological AI">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e17;
+    --bg2: #0f1420;
+    --bg3: #141926;
+    --bg4: #1a2030;
+    --card: #111827;
+    --border: rgba(99,182,255,0.1);
+    --border2: rgba(99,182,255,0.18);
+    --accent: #4fc3f7;
+    --accent2: #38bdf8;
+    --accent3: #7dd3fc;
+    --teal: #2dd4bf;
+    --teal2: #14b8a6;
+    --muted: #64748b;
+    --muted2: #94a3b8;
+    --text: #e2e8f0;
+    --text2: #cbd5e1;
+    --text3: #94a3b8;
+    --green: #34d399;
+    --amber: #fbbf24;
+    --font-sans: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --font-serif: 'Fraunces', serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10,14,23,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    color: var(--text3);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* SECTIONS */
+  section { padding: 5rem 0; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(79,195,247,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79,195,247,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(79,195,247,0.06) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .hero-content { position: relative; z-index: 1; max-width: 820px; }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding: 6px 14px;
+    border: 1px solid rgba(79,195,247,0.2);
+    border-radius: 2px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    color: #f1f5f9;
+    margin-bottom: 0.3em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent3);
+  }
+
+  .hero-title-line {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--teal);
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-statement {
+    font-size: 1.1rem;
+    color: var(--text2);
+    max-width: 680px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 3rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background: var(--accent);
+    color: #0a0e17;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--accent3); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border: 1px solid var(--border2);
+    color: var(--text2);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .hero-links a {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .hero-links a:hover { color: var(--accent); }
+
+  /* SECTION LABELS */
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  h2 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    color: #f1f5f9;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  /* HIGHLIGHTS */
+  #highlights { background: var(--bg2); }
+
+  .highlights-intro {
+    max-width: 640px;
+    color: var(--text2);
+    margin-bottom: 3rem;
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .highlight-card {
+    background: var(--bg2);
+    padding: 2rem;
+    transition: background 0.2s;
+  }
+
+  .highlight-card:hover { background: var(--bg3); }
+
+  .highlight-num {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .highlight-desc {
+    font-size: 0.82rem;
+    color: var(--text3);
+    line-height: 1.6;
+  }
+
+  /* FEATURED PROJECTS */
+  #projects { background: var(--bg); }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 2px;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card:hover {
+    border-color: var(--border2);
+    transform: translateY(-2px);
+  }
+
+  .project-card.featured {
+    border-top: 2px solid var(--accent);
+  }
+
+  .project-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .badge-published {
+    background: rgba(45,212,191,0.1);
+    color: var(--teal);
+    border: 1px solid rgba(45,212,191,0.2);
+  }
+
+  .badge-ongoing {
+    background: rgba(251,191,36,0.1);
+    color: var(--amber);
+    border: 1px solid rgba(251,191,36,0.2);
+  }
+
+  .badge-selected {
+    background: rgba(79,195,247,0.1);
+    color: var(--accent);
+    border: 1px solid rgba(79,195,247,0.15);
+  }
+
+  .project-card h3 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: #f1f5f9;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+    color: var(--text3);
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 1.5rem;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 3px 8px;
+    background: rgba(99,182,255,0.06);
+    color: var(--accent3);
+    border: 1px solid rgba(99,182,255,0.12);
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+  }
+
+  .project-link {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+
+  .project-link:hover { gap: 10px; }
+
+  /* SELECTED PROJECTS */
+  .selected-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .selected-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 2px;
+    transition: border-color 0.2s;
+  }
+
+  .selected-card:hover { border-color: var(--border2); }
+
+  .selected-card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+  }
+
+  .selected-card p {
+    font-size: 0.85rem;
+    color: var(--text3);
+    line-height: 1.7;
+  }
+
+  /* RESEARCH PILLARS */
+  #research { background: var(--bg2); }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .pillar {
+    padding: 1.5rem;
+    border-left: 2px solid var(--accent);
+    background: var(--bg3);
+  }
+
+  .pillar-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .pillar h3 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar p {
+    font-size: 0.82rem;
+    color: var(--text3);
+    line-height: 1.6;
+  }
+
+  /* PUBLICATIONS */
+  #publications { background: var(--bg); }
+
+  .pub-list { margin-top: 2rem; }
+
+  .pub-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .pub-item:last-child { border-bottom: none; }
+
+  .pub-year {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    padding-top: 4px;
+    min-width: 36px;
+  }
+
+  .pub-venue {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 3px 8px;
+    margin-bottom: 0.5rem;
+  }
+
+  .venue-nat-comm {
+    background: rgba(45,212,191,0.1);
+    color: var(--teal);
+    border: 1px solid rgba(45,212,191,0.2);
+    border-radius: 2px;
+  }
+
+  .venue-bio {
+    background: rgba(79,195,247,0.08);
+    color: var(--accent3);
+    border: 1px solid rgba(79,195,247,0.15);
+    border-radius: 2px;
+  }
+
+  .venue-cancers {
+    background: rgba(251,191,36,0.08);
+    color: var(--amber);
+    border: 1px solid rgba(251,191,36,0.15);
+    border-radius: 2px;
+  }
+
+  .pub-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+
+  .pub-role {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--green);
+    background: rgba(52,211,153,0.08);
+    border: 1px solid rgba(52,211,153,0.15);
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .pub-summary {
+    font-size: 0.83rem;
+    color: var(--text3);
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+  }
+
+  .pub-link {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .pub-link:hover { color: var(--accent3); }
+
+  /* ABOUT */
+  #about { background: var(--bg2); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--text2);
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-sidebar { display: flex; flex-direction: column; gap: 1rem; }
+
+  .sidebar-block {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 1.2rem 1.5rem;
+  }
+
+  .sidebar-block-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .sidebar-item {
+    font-size: 0.85rem;
+    color: var(--text3);
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sidebar-item::before {
+    content: '';
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* CONTACT / FOOTER */
+  #contact {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-inner h2 { margin-bottom: 0.5rem; }
+
+  .contact-inner p {
+    color: var(--text3);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid var(--border2);
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s;
+    font-family: var(--font-mono);
+  }
+
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+
+  .contact-email {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+    margin: 1.5rem 0;
+    opacity: 0.4;
+  }
+
+  /* INLINE CODE STYLE */
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    color: var(--accent);
+    background: rgba(79,195,247,0.08);
+    padding: 1px 5px;
+    border-radius: 2px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .selected-grid { grid-template-columns: 1fr; }
+    .hero-ctas { flex-direction: column; width: fit-content; }
+  }
+
+  /* SCROLL FADE IN */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* STAT BAR */
+  .stat-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-value {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--text3);
+    letter-spacing: 0.03em;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">milad.mkd</a>
+  <ul class="nav-links">
+    <li><a href="#highlights">Highlights</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-tag">Available for ML · Biotech · Computational Biology roles</div>
+      <h1>Milad<br><em>Mokhtaridoost</em></h1>
+      <div class="hero-title-line">PhD · Machine Learning Scientist in Computational Biology</div>
+      <p class="hero-statement">
+        I build scalable machine learning systems to model complex biological systems, integrating multi-omics data and graph-based approaches to uncover structure in high-dimensional biological networks and generate meaningful biological insight.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn-primary">View Research →</a>
+        <a href="#publications" class="btn-outline">Publications</a>
+        <a href="Milad_Mokhtaridoost_CV.pdf" class="btn-outline" download>Download CV</a>
+      </div>
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/miladmok/" target="_blank">LinkedIn ↗</a>
+        <a href="https://scholar.google.ca/citations?user=aZzFWnEAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar ↗</a>
+        <a href="https://github.com/MiladMokhtaridoost" target="_blank">GitHub ↗</a>
+        <a href="mailto:milad.mokhtari.ie@gmail.com">milad.mokhtari.ie@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">// impact</div>
+      <h2>Key Highlights</h2>
+      <p class="highlights-intro">
+        I focus on developing AI methods that bridge genome structure and function by modeling biological systems as structured, multi-scale networks — combining graph-based modeling, probabilistic learning, and large-scale data engineering.
+      </p>
+    </div>
+
+    <div class="highlights-grid fade-in">
+      <div class="highlight-card">
+        <div class="highlight-num">Nature<br>Comm.</div>
+        <div class="highlight-label">First-author publication</div>
+        <div class="highlight-desc">Introduced a graph-based framework for modeling 3D genome organization, revealing global chromosomal interaction topology across cell types.</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-num">20K+</div>
+        <div class="highlight-label">Hi-C datasets analyzed</div>
+        <div class="highlight-desc">Scaled genome-wide analysis across ~7,500 human and ~7,000 cross-species Hi-C datasets using AWS and distributed HPC pipelines at 10 kb resolution.</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-num">GNN</div>
+        <div class="highlight-label">Deep learning for genome</div>
+        <div class="highlight-desc">Built graph convolutional network frameworks integrating chromatin contacts to model disease- and tissue-specific genome reorganization.</div>
+      </div>
+      <div class="highlight-card">
+        <div class="highlight-num">32</div>
+        <div class="highlight-label">Cancer types modeled</div>
+        <div class="highlight-desc">Designed multi-task ML models across 32 TCGA cancer types to identify tissue-specific and cancer-specific regulatory programs from transcriptomic data.</div>
+      </div>
+    </div>
+
+    <div class="stat-bar fade-in">
+      <div class="stat-item">
+        <span class="stat-value">200+ TB</span>
+        <span class="stat-label">raw genomic data processed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">99%</span>
+        <span class="stat-label">runtime reduction (Chunky SIGNATURE)</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">9,000+</span>
+        <span class="stat-label">tumor samples analyzed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">AWS · HPC</span>
+        <span class="stat-label">cloud & distributed computing</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">SickKids</span>
+        <span class="stat-label">Research Institute, Toronto</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">// featured work</div>
+      <h2>Research Projects</h2>
+    </div>
+
+    <div class="projects-grid fade-in">
+
+      <!-- SIGNATURE -->
+      <div class="project-card featured">
+        <span class="project-badge badge-published">Published · Nature Communications 2024</span>
+        <h3>SIGNATURE: Mapping the 3D Organization of the Genome</h3>
+        <p>
+          A scalable machine learning and statistical framework for identifying significant chromosomal interactions from Hi-C data and revealing global patterns of genome organization. SIGNATURE was the first method to systematically model both cis and trans interactions genome-wide, representing the genome as a weighted graph and applying community detection to uncover topological structure. Led to a first-author publication in <em>Nature Communications</em> and has been covered by University of Toronto Engineering, SickKids, and the MOGEn department.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Hi-C</span>
+          <span class="tag">Graph modeling</span>
+          <span class="tag">Community detection</span>
+          <span class="tag">Statistical ML</span>
+          <span class="tag">3D Genome</span>
+          <span class="tag">AWS</span>
+        </div>
+        <a href="#signature-detail" class="project-link">Read more →</a>
+      </div>
+
+      <!-- GNN Disease -->
+      <div class="project-card featured">
+        <span class="project-badge badge-ongoing">Ongoing · Pre-publication</span>
+        <h3>Modeling Disease-Driven Genome Reorganization with Graph Neural Networks</h3>
+        <p>
+          An ongoing deep learning project that moves from descriptive topology mapping to predictive, condition-aware modeling of the 3D genome. A multi-task graph convolutional network is trained on Hi-C-derived graph structure with biological node features to predict disease status, tissue type, and sex — learning how the genome reorganizes under different biological conditions. Unlike SIGNATURE, which <em>maps</em> genome topology, this project asks whether those structural changes can be <em>learned</em> for prediction.
+        </p>
+        <div class="project-tags">
+          <span class="tag">GNN / GCN</span>
+          <span class="tag">Multi-task learning</span>
+          <span class="tag">Disease modeling</span>
+          <span class="tag">Chromatin</span>
+          <span class="tag">Graph embeddings</span>
+        </div>
+        <a href="#gnn-detail" class="project-link">Read more →</a>
+      </div>
+    </div>
+
+    <!-- SELECTED PROJECTS -->
+    <div class="fade-in" style="margin-top: 3rem;">
+      <div class="section-label">// selected work</div>
+      <div class="selected-grid">
+
+        <div class="selected-card">
+          <span class="project-badge badge-selected">Engineering · Pre-publication</span>
+          <h3>Chunky SIGNATURE: Scalable Ultra-High Resolution Genome Analysis</h3>
+          <p>
+            A massively parallel, cloud-based extension of SIGNATURE designed for ultra-high-resolution contact analysis. Processes ~7,500 human and ~7,000 cross-species Hi-C datasets at 10 kb resolution across more than 200 TB of raw data — achieving a <strong>99% reduction in runtime</strong> via distributed AWS pipelines. A significant scientific computing and scalable ML systems achievement.
+          </p>
+          <div class="project-tags" style="margin-top: 0.8rem;">
+            <span class="tag">AWS</span><span class="tag">Distributed HPC</span><span class="tag">10kb resolution</span><span class="tag">Multi-species</span>
+          </div>
+        </div>
+
+        <div class="selected-card">
+          <span class="project-badge badge-published">Published · Bioinformatics / Cancers</span>
+          <h3>ML for Cancer Regulatory Module Discovery</h3>
+          <p>
+            Developed optimization-based and matrix factorization ML frameworks to identify miRNA–mRNA regulatory modules across 9,000+ tumor samples spanning 32 TCGA cancer types. A multi-task learning extension captured tissue-specific and cancer-specific regulatory programs, validated through enrichment and survival analyses.
+          </p>
+          <div class="project-tags" style="margin-top: 0.8rem;">
+            <span class="tag">Multi-task learning</span><span class="tag">TCGA</span><span class="tag">miRNA–mRNA</span><span class="tag">NMF</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE DETAIL -->
+<section id="signature-detail" style="background: var(--bg2); border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">// project deep-dive</div>
+      <h2>SIGNATURE</h2>
+      <div style="font-family: var(--font-mono); font-size: 12px; color: var(--teal); margin-bottom: 1.5rem;">Nature Communications · 2024 · First Author</div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;" class="about-grid">
+        <div>
+          <p style="color: var(--text2); margin-bottom: 1rem;"><strong style="color: var(--text);">The question:</strong> How is the human genome organized in 3D space, and what patterns govern long-range interactions between chromosomes?</p>
+          <p style="color: var(--text2); margin-bottom: 1rem;">Previous methods largely focused on local intra-chromosomal (cis) contacts. Global inter-chromosomal organization remained poorly understood — Hi-C data is inherently sparse and noisy, and no existing tool was designed for genome-wide cis + trans all-vs-all modeling.</p>
+          <p style="color: var(--text2); margin-bottom: 1.5rem;"><strong style="color: var(--accent);">What made SIGNATURE novel:</strong> it was the first framework to jointly model cis and trans contacts genome-wide using a supervised statistical approach, then represent the genome as a weighted graph and apply community detection to decompose it into interpretable structural regions.</p>
+
+          <div class="section-label">Key findings</div>
+          <ul style="list-style: none; margin-top: 0.8rem;">
+            <li style="color: var(--text3); font-size: 0.88rem; padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; gap: 10px;"><span style="color: var(--accent);">→</span> Identified recurrent inter-chromosomal interaction patterns across cell types</li>
+            <li style="color: var(--text3); font-size: 0.88rem; padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; gap: 10px;"><span style="color: var(--accent);">→</span> Found consistent interaction hubs in gene-rich, transcriptionally active regions</li>
+            <li style="color: var(--text3); font-size: 0.88rem; padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; gap: 10px;"><span style="color: var(--accent);">→</span> Revealed a global spatial gradient organizing genome topology</li>
+            <li style="color: var(--text3); font-size: 0.88rem; padding: 6px 0; display: flex; gap: 10px;"><span style="color: var(--accent);">→</span> Demonstrated that genome organization follows structured, reproducible principles</li>
+          </ul>
+        </div>
+        <div>
+          <div class="sidebar-block" style="margin-bottom: 1rem;">
+            <div class="sidebar-block-label">Method pipeline</div>
+            <div class="sidebar-item">Global background model for Hi-C contacts</div>
+            <div class="sidebar-item">Z-score conversion → significant contacts</div>
+            <div class="sidebar-item">Weighted graph representation of genome</div>
+            <div class="sidebar-item">Community detection for structural decomposition</div>
+            <div class="sidebar-item">Genome topology visualization</div>
+          </div>
+          <div class="sidebar-block" style="margin-bottom: 1rem;">
+            <div class="sidebar-block-label">Scale & engineering</div>
+            <div class="sidebar-item">Multiple human cell types</div>
+            <div class="sidebar-item">Extended to thousands of datasets</div>
+            <div class="sidebar-item">AWS + HPC distributed pipelines</div>
+            <div class="sidebar-item">Foundation for Chunky SIGNATURE</div>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-block-label">Press coverage</div>
+            <div class="sidebar-item"><a href="https://www.engineering.utoronto.ca" target="_blank" style="color: var(--accent); text-decoration: none;">U of T Engineering News ↗</a></div>
+            <div class="sidebar-item"><a href="https://www.sickkids.ca" target="_blank" style="color: var(--accent); text-decoration: none;">SickKids Research ↗</a></div>
+            <div class="sidebar-item">MOGEn Department announcement</div>
+            <div class="sidebar-item">LinkedIn — animated visualization post</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GNN DETAIL -->
+<section id="gnn-detail" style="background: var(--bg); border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">// project deep-dive</div>
+      <h2>Disease-Driven Genome Reorganization</h2>
+      <div style="font-family: var(--font-mono); font-size: 12px; color: var(--amber); margin-bottom: 1.5rem;">Ongoing Research · Pre-publication · Graph Neural Networks</div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;" class="about-grid">
+        <div>
+          <p style="color: var(--text2); margin-bottom: 1rem;"><strong style="color: var(--text);">The question:</strong> How does the 3D organization of the genome change in disease — and can those changes be learned by a model?</p>
+          <p style="color: var(--text2); margin-bottom: 1rem;">Genome organization varies systematically across healthy vs. disease states, tissues, and sex. The challenge is to model these changes in a predictive, condition-aware framework rather than simply mapping static topology.</p>
+          <p style="color: var(--text2); margin-bottom: 1.5rem;">This project trains a <strong style="color: var(--accent);">multi-task graph convolutional network</strong> using Hi-C-derived graph structure with biological node features, producing genome-level embeddings and classifiers for disease status, tissue type, and sex.</p>
+          <p style="color: var(--text3); font-size: 0.85rem; padding: 10px; border-left: 2px solid var(--amber); background: rgba(251,191,36,0.04);">Note: This project is distinct from SIGNATURE. SIGNATURE focused on identifying and mapping genome-wide 3D topology. This GNN work focuses on disease-related reorganization and predictive modeling.</p>
+        </div>
+        <div>
+          <div class="sidebar-block" style="margin-bottom: 1rem;">
+            <div class="sidebar-block-label">Graph representation</div>
+            <div class="sidebar-item">Nodes = genomic regions</div>
+            <div class="sidebar-item">Edges = chromatin interactions</div>
+            <div class="sidebar-item">Node features = biological signals</div>
+            <div class="sidebar-item">GCN learns context-aware embeddings</div>
+          </div>
+          <div class="sidebar-block">
+            <div class="sidebar-block-label">Multi-task outputs</div>
+            <div class="sidebar-item">Disease status classification</div>
+            <div class="sidebar-item">Tissue type classification</div>
+            <div class="sidebar-item">Sex classification</div>
+            <div class="sidebar-item">Genome-level structural embeddings</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH PILLARS -->
+<section id="research">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">// research focus</div>
+      <h2>Four Research Pillars</h2>
+    </div>
+    <div class="pillars-grid fade-in">
+      <div class="pillar">
+        <div class="pillar-icon" style="color: var(--accent); font-size: 1.2rem; font-family: var(--font-mono);">G</div>
+        <h3>Graph-based modeling of biological systems</h3>
+        <p>Representing genomes and regulatory networks as graphs to learn structured, topology-aware representations of biological systems.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon" style="color: var(--teal); font-size: 1.2rem; font-family: var(--font-mono);">M</div>
+        <h3>Multi-omics data integration and representation learning</h3>
+        <p>Combining Hi-C, RNA-seq, and other omics layers into unified representations that capture complementary biological signals.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon" style="color: var(--amber); font-size: 1.2rem; font-family: var(--font-mono);">S</div>
+        <h3>Large-scale genomic data processing and scalable ML</h3>
+        <p>Building distributed AWS and HPC pipelines capable of processing 200+ TB of raw genomic data with dramatic efficiency gains.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon" style="color: var(--green); font-size: 1.2rem; font-family: var(--font-mono);">K</div>
+        <h3>Knowledge-driven AI for biological discovery</h3>
+        <p>Embedding biological priors and domain structure into ML models to produce interpretable, biologically meaningful insights.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">// selected publications</div>
+      <h2>Publications</h2>
+    </div>
+
+    <div class="pub-list fade-in">
+
+      <div class="pub-item">
+        <div class="pub-year">2024</div>
+        <div>
+          <div><span class="pub-venue venue-nat-comm">Nature Communications</span></div>
+          <div class="pub-title">
+            Inter-chromosomal contacts demarcate genome topology along a spatial gradient
+            <span class="pub-role">First Author</span>
+          </div>
+          <div class="pub-summary">Introduced SIGNATURE — a scalable statistical and graph-based framework for modeling genome-wide 3D chromosomal organization from Hi-C data, revealing global topological structure through community detection.</div>
+          <a href="https://scholar.google.ca/citations?user=aZzFWnEAAAAJ&hl=en&oi=ao" target="_blank" class="pub-link">View on Google Scholar ↗</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2020</div>
+        <div>
+          <div><span class="pub-venue venue-bio">Bioinformatics</span></div>
+          <div class="pub-title">
+            An Efficient Framework to Identify Key miRNA–mRNA Regulatory Modules in Cancer
+            <span class="pub-role">First Author</span>
+          </div>
+          <div class="pub-summary">Developed an optimization-based ML framework for identifying cancer-specific miRNA–mRNA regulatory modules across large-scale TCGA datasets.</div>
+          <a href="https://scholar.google.ca/citations?user=aZzFWnEAAAAJ&hl=en&oi=ao" target="_blank" class="pub-link">View on Google Scholar ↗</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2022</div>
+        <div>
+          <div><span class="pub-venue venue-cancers">Cancers</span></div>
+          <div class="pub-title">
+            Identifying Tissue- and Cohort-Specific RNA Regulatory Modules in Cancer Cells Using Multitask Learning
+            <span class="pub-role">First Author</span>
+          </div>
+          <div class="pub-summary">Multi-task learning approach for discovering tissue-specific and cancer-specific regulatory programs across 32 cancer types and 9,000+ tumor samples from TCGA.</div>
+          <a href="https://scholar.google.ca/citations?user=aZzFWnEAAAAJ&hl=en&oi=ao" target="_blank" class="pub-link">View on Google Scholar ↗</a>
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">—</div>
+        <div>
+          <div><span class="pub-venue venue-bio">Neural Networks / Cancer Staging</span></div>
+          <div class="pub-title">
+            Cancer Stage Classification via Deep Neural Networks
+            <span class="pub-role">Co-supervised</span>
+          </div>
+          <div class="pub-summary">Co-supervised contribution to a deep learning approach for cancer stage classification using transcriptomic profiles.</div>
+          <a href="https://scholar.google.ca/citations?user=aZzFWnEAAAAJ&hl=en&oi=ao" target="_blank" class="pub-link">View full publication list ↗</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+      <a href="https://scholar.google.ca/citations?user=aZzFWnEAAAAJ&hl=en&oi=ao" target="_blank" class="btn-outline" style="font-size: 13px;">View all publications on Google Scholar ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">// about</div>
+      <h2>About Milad</h2>
+    </div>
+    <div class="about-grid fade-in">
+      <div class="about-text">
+        <p>
+          I am a Machine Learning Scientist at SickKids Research Institute in Toronto, where I develop scalable AI and statistical frameworks for modeling biological systems from large-scale genomic data. My work focuses on graph-based modeling of genome organization, multi-omics integration, and machine learning methods that uncover hidden structure in complex biological systems.
+        </p>
+        <p>
+          I bring strong technical leadership and mentorship experience, working across disciplines with scientists, engineers, and clinicians. I have led collaborative projects, mentored researchers, and communicated technical ideas to diverse audiences through publications, invited talks, and interdisciplinary research initiatives.
+        </p>
+        <p>
+          More broadly, I am interested in building knowledge-driven AI systems that bridge genome structure and function and enable biologically meaningful, data-driven discovery — with direct relevance to precision medicine, disease biology, and the next generation of biotech applications.
+        </p>
+        <p style="color: var(--text3); font-size: 0.88rem;">
+          I am open to conversations in machine learning, computational biology, and AI-driven discovery. Toronto-based. Open to industry roles in biotech, pharma AI, and computational biology.
+        </p>
+        <div style="margin-top: 1.5rem;">
+          <a href="Milad_Mokhtaridoost_CV.pdf" class="btn-primary" download style="width: fit-content;">Download CV (PDF)</a>
+        </div>
+      </div>
+      <div class="about-sidebar">
+        <div class="sidebar-block">
+          <div class="sidebar-block-label">Current position</div>
+          <div class="sidebar-item">Machine Learning Scientist</div>
+          <div class="sidebar-item">SickKids Research Institute</div>
+          <div class="sidebar-item">Toronto, Canada</div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-block-label">Core expertise</div>
+          <div class="sidebar-item">Graph neural networks (GNN/GCN)</div>
+          <div class="sidebar-item">3D genome modeling (Hi-C)</div>
+          <div class="sidebar-item">Multi-omics integration</div>
+          <div class="sidebar-item">Distributed ML on AWS / HPC</div>
+          <div class="sidebar-item">Multi-task learning</div>
+          <div class="sidebar-item">Statistical genomics</div>
+        </div>
+        <div class="sidebar-block">
+          <div class="sidebar-block-label">Interested in</div>
+          <div class="sidebar-item">Biotech ML roles</div>
+          <div class="sidebar-item">Pharma AI / computational biology</div>
+          <div class="sidebar-item">Research scientist positions</div>
+          <div class="sidebar-item">Industry collaborations</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner fade-in">
+      <div class="section-label">// contact</div>
+      <h2>Get in Touch</h2>
+      <p>Open to conversations in machine learning, computational biology, and AI-driven discovery.</p>
+      <div class="contact-links">
+        <a href="mailto:milad.mokhtari.ie@gmail.com" class="contact-link">✉ Email</a>
+        <a href="https://www.linkedin.com/in/miladmok/" target="_blank" class="contact-link">in LinkedIn</a>
+        <a href="https://scholar.google.ca/citations?user=aZzFWnEAAAAJ&hl=en&oi=ao" target="_blank" class="contact-link">Scholar</a>
+        <a href="https://github.com/MiladMokhtaridoost" target="_blank" class="contact-link">{ } GitHub</a>
+      </div>
+      <a href="mailto:milad.mokhtari.ie@gmail.com" class="contact-email">milad.mokhtari.ie@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Milad Mokhtaridoost · Machine Learning Scientist in Computational Biology · Toronto</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
